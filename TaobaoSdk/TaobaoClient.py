@@ -19,7 +19,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 from Common import *
-from Response import *
+from api_server.conf.settings import DEBUG
+from api_server.services.choose_method import get_method
 from SdkCommon import *
 from decorator import sdk_exception
 import logging
@@ -63,6 +64,9 @@ class TaobaoClient(object):
         @return: 得到的响应,必然是Reponse下的对象;除非访问时出错了
         @rtype: tuple(response1, response2, ...)
         '''
+        #import pdb;pdb.set_trace()
+        if DEBUG:
+            return get_method(simplejson.dumps(params),'','')
         sign = self.buildSign(params, session)
         sign = sign.upper()
         # 参数
@@ -91,7 +95,7 @@ class TaobaoClient(object):
 
         print 'API CALL:',parameters
         responseStatus, rawContent = client.request(uri=self.serverUrl, method="POST",body=urllib.urlencode(parameters), headers=headers)
-        #print 'API RETURN:',rawContent
+        print 'API RETURN:',rawContent
         if responseStatus["status"] != '200':
             print 'error:',rawContent
             return None
