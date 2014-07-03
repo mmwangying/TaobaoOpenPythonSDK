@@ -5,7 +5,6 @@
 
 ## @brief 删除itemimg_id 所指定的商品图片  传入的num_iid所对应的商品必须属于当前会话的用户  itemimg_id对应的图片需要属于num_iid对应的商品
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:31
 # @version: 0.0.0
 
 import os
@@ -58,7 +57,7 @@ class ItemImgDeleteRequest(object):
         # </UL>
         self.id = None
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">商品数字ID，必选</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">商品数字ID，必选<br /> 支持最小值为：0</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">Number</SPAN>

@@ -5,7 +5,6 @@
 
 ## @brief 更新一个推广计划的日限额
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:36
 # @version: 0.0.0
 
 import os
@@ -47,7 +46,7 @@ class SimbaCampaignBudgetUpdateRequest(object):
         self.timestamp = int(time.time())
 
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">如果为空则取消限额；否则必须为整数，单位是元，不得小于30；</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">如果为空则取消限额；否则必须为整数，单位是元，不得小于30；<br /> 支持最大值为：99999<br /> 支持最小值为：30</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">Number</SPAN>

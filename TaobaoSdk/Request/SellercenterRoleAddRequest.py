@@ -5,7 +5,6 @@
 
 ## @brief 给指定的卖家创建新的子账号角色<br/> 如果需要授权的权限点有下级权限点或上级权限点，把该权限点的父权限点和该权限点的所有子权限都一并做赋权操作，并递归处理<br/>例如：权限点列表如下<br/> code=sell 宝贝管理<br/> ---------|code=sm 店铺管理<br/> ---------|---------|code=sm-design 如店铺装修<br/> ---------|---------|---------|code=sm-tbd-visit内店装修入口<br/> ---------|---------|---------|code=sm-tbd-publish内店装修发布<br/> ---------|---------|code=phone 手机淘宝店铺<br/> 调用改接口给code=sm-design店铺装修赋权时，同时会将下列权限点都赋予默认角色<br/> code=sell 宝贝管理<br/> ---------|code=sm 店铺管理<br/> ---------|---------|code=sm-design 如店铺装修<br/> ---------|---------|---------|code=sm-tbd-visit内店装修入口<br/> ---------|---------|---------|code=sm-tbd-publish内店装修发布<br/>
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:40
 # @version: 0.0.0
 
 import os
@@ -47,7 +46,7 @@ class SellercenterRoleAddRequest(object):
         self.timestamp = int(time.time())
 
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">角色描述</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">角色描述<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">String</SPAN>
@@ -58,7 +57,7 @@ class SellercenterRoleAddRequest(object):
         # </UL>
         self.description = None
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">角色名</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">角色名<br /> 支持最大长度为：20<br /> 支持的最大列表长度为：20</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">String</SPAN>
@@ -69,7 +68,7 @@ class SellercenterRoleAddRequest(object):
         # </UL>
         self.name = None
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">表示卖家昵称</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">表示卖家昵称<br /> 支持最大长度为：500<br /> 支持的最大列表长度为：500</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">String</SPAN>

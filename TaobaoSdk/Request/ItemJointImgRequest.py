@@ -5,7 +5,6 @@
 
 ## @brief * 关联一张商品图片到num_iid指定的商品中     * 传入的num_iid所对应的商品必须属于当前会话的用户     * 商品图片关联在卖家身份和图片来源上的限制，卖家要是B卖家或订购了多图服务才能关联图片，并且图片要来自于卖家自己的图片空间才行     * 商品图片数量有限制。不管是上传的图片还是关联的图片，他们的总数不能超过一定限额
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:31
 # @version: 0.0.0
 
 import os
@@ -69,7 +68,7 @@ class ItemJointImgRequest(object):
         # </UL>
         self.is_major = None
         
-        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">商品数字ID，必选</SPAN>
+        ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">商品数字ID，必选<br /> 支持最小值为：0</SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">Number</SPAN>

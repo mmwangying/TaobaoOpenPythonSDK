@@ -5,7 +5,6 @@
 
 ## @brief 运费模板对象
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:25
 # @version: 0.0.0
 
 from copy import deepcopy
@@ -62,7 +61,7 @@ class DeliveryTemplate(object):
         # </UL>
         self.address = None
         
-        ## @brief <SPAN style="color:Blue3; font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">可选值：0,1  说明 0:表示买家承担服务费; 1:表示卖家承担服务费</SPAN>
+        ## @brief <SPAN style="color:Blue3; font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">可选值：0,1,2,3<br>,说明如下<br>1)买家承担运费的模版<br>0：买家承担服务费<br>1: 卖家承担服务费<br>2)卖家承担运费的模版<br>2:卖家承担运费的模版（集市），卖家承担服务费<br>3:卖家承担运费的模版（天猫），卖家承担服务费<br></SPAN>
         # <UL>
         # <LI>
         # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">Number</SPAN>

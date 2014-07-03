@@ -5,7 +5,6 @@
 
 ## @brief Sku结构
 # @author wuliang@maimiaotech.com
-# @date 2013-09-22 16:52:25
 # @version: 0.0.0
 
 from copy import deepcopy
@@ -39,7 +38,7 @@ if __getCurrentPath() not in sys.path:
     sys.path.insert(0, __getCurrentPath())
 
 
-                                                                                                                        
+                                                                                                                                
 ## @brief <SPAN style="font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">Sku结构</SPAN>
 class Sku(object):
     def __init__(self, kargs=dict()):
@@ -47,6 +46,17 @@ class Sku(object):
 
         self.__kargs = deepcopy(kargs)
         
+        
+        ## @brief <SPAN style="color:Blue3; font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">商品级别的条形码</SPAN>
+        # <UL>
+        # <LI>
+        # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Type</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">String</SPAN>
+        # </LI>
+        # <LI>
+        # <SPAN style="color:DarkRed; font-size:18px; font-family:'Times New Roman',Georgia,Serif;">Level</SPAN>: <SPAN style="color:DarkMagenta; font-size:16px; font-family:'Times New Roman','宋体',Georgia,Serif;">Basic</SPAN>
+        # </LI>
+        # </UL>
+        self.barcode = None
         
         ## @brief <SPAN style="color:Blue3; font-size:16px; font-family:'宋体','Times New Roman',Georgia,Serif;">基础色数据</SPAN>
         # <UL>
@@ -269,6 +279,8 @@ class Sku(object):
     def _getPropertyType(self, name):
         properties = {
             
+            "barcode": "String",
+            
             "change_prop": "String",
             
             "created": "String",
@@ -300,6 +312,8 @@ class Sku(object):
             "with_hold_quantity": "Number",
         }
         levels = {
+            
+            "barcode": "Basic",
             
             "change_prop": "Basic",
             
@@ -361,6 +375,9 @@ class Sku(object):
             return (pythonType, False)
         
     def __init(self, kargs):
+        
+        if kargs.has_key("barcode"):
+            self.barcode = self._newInstance("barcode", kargs["barcode"])
         
         if kargs.has_key("change_prop"):
             self.change_prop = self._newInstance("change_prop", kargs["change_prop"])
