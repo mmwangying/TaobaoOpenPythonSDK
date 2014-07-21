@@ -23,6 +23,7 @@ from api_server.conf.settings import DEBUG
 from api_server.services.choose_method import get_method
 from SdkCommon import *
 from decorator import sdk_exception
+from Exceptions.HttpStatusException import HttpStatusException
 import logging
 logger = logging.getLogger(__name__)
 def __getCurrentPath():
@@ -98,7 +99,7 @@ class TaobaoClient(object):
         print 'API RETURN:',rawContent
         if responseStatus["status"] != '200':
             print 'error:',rawContent
-            return None
+            raise HttpStatusException
         try:
             if ",," in rawContent:
                 rawContent=rawContent.replace(",,",",")
