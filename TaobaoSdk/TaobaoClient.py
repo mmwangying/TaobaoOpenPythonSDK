@@ -66,7 +66,7 @@ class TaobaoClient(object):
         @rtype: tuple(response1, response2, ...)
         '''
         #import pdb;pdb.set_trace()
-        if DEBUG:
+        if DEBUG and params.get('method')!='taobao.time.get':
             return get_method(simplejson.dumps(params),'','')
         sign = self.buildSign(params, session)
         sign = sign.upper()
